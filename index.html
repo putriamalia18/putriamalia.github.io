@@ -2,107 +2,89 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Biodata Interaktif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biodata Interaktif Putri Amalia">
+    <title>Biodata Interaktif | Putri Amalia</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>BIODATA DIRI SAYA</h1>
+<main class="container">
+    <header class="header">
+        <h1>BIODATA <span class="highlight">DIRI SAYA</span></h1>
+        <hr class="line">
+    </header>
 
-    <!-- Nama -->
-    <button class="btn" onclick="toggle('nama')">Nama</button>
-    <div class="content" id="nama">
-        <img src="foto.jpg" class="foto">
-        <p>Putri Amalia</p>
-    </div>
+    <section class="profile-section">
 
-    <!-- TTL -->
-    <button class="btn" onclick="toggle('ttl')">Tempat & Tanggal Lahir</button>
-    <div class="content" id="ttl">
-        <p>Selat Baru 18 Agustus 2006</p>
-    </div>
-
-    <!-- Alamat -->
-    <button class="btn" onclick="toggle('alamat')">Alamat</button>
-    <div class="content" id="alamat">
-        <p>JL.Antara Desa Selat Baru Kec.Bantan,Kab.Bengkalis,Prov.Riau</p>
-    </div>
-
-    <!-- Cita-cita -->
-    <button class="btn" onclick="toggle('cita')">Cita-cita</button>
-    <div class="content" id="cita">
-        <p>Hacker Sopan </p>
-    </div>
-
-    <!-- Motto -->
-    <button class="btn" onclick="toggle('motto')">Motto Hidup</button>
-    <div class="content" id="motto">
-        <p>"Everything can change if you try, pray, and trust God."</p>
-    </div>
-
-    <!-- Email -->
-    <button class="btn" onclick="toggle('email')">Email</button>
-    <div class="content" id="email">
-        <p>putriamalia@gmail.com</p>
-    </div>
-
-    <!-- Musik -->
-    <button class="btn" onclick="toggle('music')">Musik Favorit 🎵</button>
-    <div class="content" id="music">
-        <img src="musik.jpg" class="foto">
-        <audio controls>
-            <source src="lagu.mp3" type="audio/mpeg">
-            Browser tidak mendukung audio
-        </audio>
-    </div>
-
-    <!-- Video -->
-    <button class="btn" onclick="toggle('motivasi')">Video Motivasi </button>
-    <div class="content" id="motivasi">
-        <video controls poster="poster.jpg">
-            <source src="motivasi.mp4" type="video/mp4">
-            Browser tidak mendukung video
-        </video>
-    </div>
-
-    <!-- Bakat & Minat -->
-<button class="btn" onclick="toggle('bakat')">Bakat & Minat </button>
-<div class="content" id="bakat">
-    <div class="grid-foto">
-        <div class="item">
-            <img src="bakat1.jpg">
-            <p>Badminton</p>
+        <button class="btn" onclick="toggle('nama')">Identitas Utama</button>
+        <div class="content" id="nama">
+            <img src="foto.jpg" alt="Foto Profil" class="foto">
+            <p class="nama">Putri Amalia</p>
+            <small class="status">Mahasiswa </small>
         </div>
-        <div class="item">
-            <img src="bakat2.jpg">
-            <p>Badminton</p>
+
+        <button class="btn" onclick="toggle('info')">Tempat Tanggal Lahir & Alamat</button>
+        <div class="content" id="info">
+            <p>📍 <b>Tempat & Tanggal:</b><br> Selat Baru, 18 Agustus 2006</p>
+            <p>🏠 <b>Alamat:</b><br> JL. Antara Desa Selat Baru, Bengkalis, Riau</p>
         </div>
-        <div class="item">
-            <img src="bakat3.jpg">
-            <p>Badminton</p>
+
+        <button class="btn" onclick="toggle('dreams')">kata-kata</button>
+        <div class="content" id="dreams">
+            <p class="quote">"Everything can change if you try, pray, and trust God."</p>
+            <p>Cita-cita: <b>Hacker Sopan 💻</b></p>
         </div>
-        <div class="item">
-            <img src="bakat4.jpg">
-            <p>Badminton</p>
+
+        <button class="btn" onclick="toggle('media')">Musik Favorit</button>
+        <div class="content" id="media">
+            <label>Musik Favorit</label>
+            <audio controls>
+                <source src="lagu.mp3" type="audio/mpeg">
+            </audio>
+
+            <label>Video Motivasi</label>
+            <video controls poster="poster.jpg">
+                <source src="motivasi.mp4" type="video/mp4">
+            </video>
         </div>
+
+        <button class="btn" onclick="toggle('bakat')">🎨 Bakat & Minat</button>
+        <div class="content" id="bakat">
+           <div class="grid-foto">
+    <div class="item">
+        <img src="bakat1.jpg" alt="Badminton 1">
+        <p>Badminton</p>
+    </div>
+
+    <div class="item">
+        <img src="bakat2.jpg" alt="Badminton 2">
+        <p>Badminton</p>
+    </div>
+
+    <div class="item">
+        <img src="bakat3.jpg" alt="Badminton 3">
+        <p>Badminton</p>
+    </div>
+
+    <div class="item">
+        <img src="bakat4.jpg" alt="Badminton 4">
+        <p>Badminton</p>
     </div>
 </div>
 
-<!-- Galeri Favorit -->
-<button class="btn" onclick="toggle('galeri')">Foto Favorit </button>
-<div class="content" id="galeri">
-    <div class="single-foto">
-        <img src="favorit.jpg" alt="Foto Favorit">
-        <p>Momen Favorit Saya</p>
-    </div>
-</div>
-<p class="copyright">
-    © 2026 copyright dibuat dengan taburan cinta
-.
-</p>
 
-</div>
+    </section>
+
+    <footer class="copyright">
+        <p>© 2026 Dibuat setiap subuh<span class="heart"></span> oleh Putri Amalia</p>
+    </footer>
+</main>
 
 <script src="script.js"></script>
 </body>
