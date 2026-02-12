@@ -1,10 +1,14 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f4f0ff, #e0c3fc);
+    background: linear-gradient(135deg, #f4f0ff, #e0c3fc, #c8b6ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -12,171 +16,155 @@ body {
     padding: 20px;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .container {
-    background: white;
-    width: 90%;
-    max-width: 600px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 500px;
     padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    animation: fadeIn 1s ease;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-h1 {
+.header {
     text-align: center;
-    color: #5a189a;
-    margin-bottom: 20px;
 }
 
-/* BUTTON */
+.highlight {
+    background: linear-gradient(to right, #7b2cbf, #9d4edd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background: #e0c3fc;
+    margin: 12px auto 25px;
+    border-radius: 10px;
+}
+
 .btn {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     margin: 10px 0;
     border: none;
-    border-radius: 25px;
-    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
-    color: white;
-    font-size: 15px;
+    border-radius: 15px;
+    background: white;
+    color: #5a189a;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #9d4edd, #7b2cbf);
+    background: #7b2cbf;
+    color: white;
+    transform: scale(1.03);
 }
 
-/* CONTENT ANIMASI */
+/* FOTO PROFIL JADI BAGUS */
+.foto {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #7b2cbf;
+    box-shadow: 0 10px 25px rgba(123, 44, 191, 0.35);
+    margin: 10px auto;
+    display: block;
+    transition: 0.4s;
+}
+
+.foto:hover {
+    transform: scale(1.08) rotate(2deg);
+}
+
+.nama {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.status {
+    color: #777;
+}
+
 .content {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
     text-align: center;
-    transform: translateY(-20px);
+    transition: all 0.5s ease;
 }
 
 .content.show {
-    max-height: 1000px;
+    max-height: 800px;
     opacity: 1;
-    transform: translateY(0);
+    padding: 15px 0;
 }
 
-.content p {
-    background: #e0c3fc;
-    padding: 10px;
-    border-radius: 12px;
-    margin: 10px 0;
+.quote {
+    font-style: italic;
+    color: #555;
 }
 
-/* FOTO */
-.foto {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #7b2cbf;
-    margin: 10px auto;
-    display: block;
-}
-
-/* AUDIO & VIDEO */
-audio, video {
-    width: 100%;
+.grid-foto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     margin-top: 10px;
-    border-radius: 12px;
-    display: block;
 }
 
-#motivasi video {
-    max-height: 400px;
-    background: black;
-}
-
-/* ANIMASI MASUK */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-/* ITEM BAKAT */
 .item {
-    background: #f3e8ff;
-    padding: 10px;
-    border-radius: 15px;
     text-align: center;
-    animation: floatUp 0.6s ease forwards;
 }
 
-/* FOTO */
 .item img {
     width: 100%;
     height: 120px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid #7b2cbf;
-}
-
-/* TEKS */
-.item p {
-    margin-top: 8px;
-    font-weight: bold;
-    color: #5a189a;
-    background: transparent;
-}
-
-/* GRID */
-.grid-foto {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 10px;
-}
-
-/* ANIMASI MASUK */
-@keyframes floatUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* FOTO TUNGGAL */
-.single-foto {
-    background: #f3e8ff;
-    padding: 15px;
-    border-radius: 18px;
-    text-align: center;
-    animation: floatUp 0.6s ease forwards;
-}
-
-.single-foto img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    object-position: center 35%;
- /* ini kuncinya */
     border-radius: 15px;
-    border: 4px solid #7b2cbf;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+}
+
+.item p {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 
 
-.single-foto p {
+.grid-foto img {
+    width: 120px;
+    border-radius: 15px;
+}
+
+.guest-book {
+    margin-top: 25px;
+    border-top: 2px dashed #e0c3fc;
+    padding-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
     margin-top: 10px;
-    font-weight: bold;
-    color: #5a189a;
-    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #e0c3fc;
 }
-/* COPYRIGHT */
-.copyright {
-    margin-top: 12px;
-    font-size: 12px;
-    color: #6c4aa5;
-    text-align: center;
-    opacity: 0.8;
+
+.heart {
+    color: #ff4d6d;
 }
