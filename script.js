@@ -1,20 +1,19 @@
-// Database Foto (Format .JPEG Huruf Kapital)
 const photoData = {
-    'tk': { title: 'Masa Kecil Bahagia 🍼', photos: ['tk1.JPEG'] },
-    'sd': { title: 'Masa Putih Merah 🎒', photos: ['sd1.JPEG'] },
+    'tk': { title: 'Masa Kecil Bahagia 🍼', photos: ['tk1.jpeg'] },
+    'sd': { title: 'Masa Putih Merah 🎒', photos: ['sd1.jpeg'] },
     'smp': { 
         title: 'Masa Remaja Seru 🏫', 
-        photos: ['smp1.JPEG', 'smp2.JPEG', 'smp3.JPEG', 'smp4.JPEG'] 
+        photos: ['smp1.jpeg', 'smp2.jpeg', 'smp3.jpeg', 'smp4.jpeg'] 
     },
     'sma': { 
         title: 'Highschool Vibes 🎓', 
-        photos: ['sma1.JPEG', 'sma2.JPEG', 'sma3.JPEG', 'sma4.JPEG', 'sma5.JPEG', 'sma6.JPEG'] 
+        photos: ['sma1.jpeg', 'sma2.jpeg', 'sma3.jpeg', 'sma4.jpeg', 'sma5.jpeg', 'sma6.jpeg'] 
     },
     'uni': { 
         title: 'System Info Era 💻', 
         photos: [
-            'uni1.JPEG', 'uni2.JPEG', 'uni3.JPEG', 'uni4.JPEG', 'uni5.JPEG', 
-            'uni6.JPEG', 'uni7.JPEG', 'uni8.JPEG', 'uni9.JPEG', 'uni10.JPEG'
+            'uni1.jpeg', 'uni2.jpeg', 'uni3.jpeg', 'uni4.jpeg', 'uni5.jpeg', 
+            'uni6.jpeg', 'uni7.jpeg', 'uni8.jpeg', 'uni9.jpeg', 'uni10.jpeg'
         ] 
     }
 };
@@ -29,10 +28,9 @@ function openGallery(stage) {
     
     photoData[stage].photos.forEach(path => {
         const img = document.createElement('img');
-        img.src = path;
+        img.src = './' + path; // Pakai ./ agar lebih aman di GitHub Pages
         img.alt = "Memory Putri";
-        // Antisipasi jika file tidak ditemukan
-        img.onerror = function() { this.style.display='none'; console.log("File tidak ditemukan: " + path); };
+        img.onerror = function() { console.log("Gagal muat: " + path); };
         grid.appendChild(img);
     });
     
