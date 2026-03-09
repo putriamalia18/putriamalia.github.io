@@ -28,8 +28,8 @@ function openGallery(stage) {
     
     photoData[stage].photos.forEach(path => {
         const img = document.createElement('img');
-        img.src = './' + path; // Pakai ./ agar lebih aman di GitHub Pages
-        img.alt = "Memory Putri";
+        img.src = './' + path; 
+        img.alt = "Memory Putri Amalia";
         img.onerror = function() { console.log("Gagal muat: " + path); };
         grid.appendChild(img);
     });
