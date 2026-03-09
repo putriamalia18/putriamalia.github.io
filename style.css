@@ -3,13 +3,17 @@
 
 html { scroll-behavior: smooth; }
 
-body {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('wallpaper.jpg');
+bbody {
+    /* Pastikan 'wallpaper.jpg' di bawah ini diganti sesuai nama file aslimu (cek JPG vs jpg) */
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                url('./wallpaper.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #333;
     display: flex;
+    min-height: 100vh;
 }
 
 .text-blue { color: #00a8ff; }
