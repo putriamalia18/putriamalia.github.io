@@ -182,3 +182,9 @@ section { min-height: 100vh; padding: 60px 0; }
     color: #ff0000; /* Berubah jadi merah khas PDF saat disentuh mouse */
     transform: scale(1.3);
 }
+/* Efek Hover untuk Ikon PDF */
+.social-icon.pdf:hover {
+    color: #ff0000; /* Warna merah khas PDF saat kursor di atasnya */
+    transform: scale(1.3);
+    opacity: 1;
+}
