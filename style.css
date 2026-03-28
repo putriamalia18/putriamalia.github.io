@@ -178,3 +178,7 @@ section { min-height: 100vh; padding: 60px 0; }
 .social-icon { font-size: 22px; color: white; opacity: 0.6; transition: 0.3s; }
 .social-icon:hover { opacity: 1; transform: scale(1.2); }
 .vertical-text { writing-mode: vertical-rl; color: white; font-size: 10px; letter-spacing: 3px; opacity: 0.5; }
+.social-icon.pdf:hover {
+    color: #ff0000; /* Berubah jadi merah khas PDF saat disentuh mouse */
+    transform: scale(1.3);
+}
